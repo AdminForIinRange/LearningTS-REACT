@@ -9,10 +9,16 @@ function App() {
   Hi = false
 
 
+  const returnHi = (): string =>{
+ 
+    return "Hi"
+  }
+
   return (
     <>
     {console.log(Hi)}
-      s
+    {returnHi}
+      
     </>
   )
 }
