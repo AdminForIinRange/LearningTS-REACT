@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import PostList from "./components/PostList/PostList.tsx"
+import PostCard from "./components/PostCard/PostCard.tsx"
 import "./App.css";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   interface UserData<T extends object> {
     employee: T[];
   }
-  genreics
+
   const EmployeeData: UserData<{
     username: string;
     UserID: number;
@@ -43,14 +44,12 @@ function App() {
         Role: "string",
       },
     ],
-    
   };
 
   return (
     <>
-      {console.log(Hi)}
-      {returnHi("hi ", true)}
-      {console.log(EmployeeData)}
+
+     <PostCard />
     </>
   );
 }
