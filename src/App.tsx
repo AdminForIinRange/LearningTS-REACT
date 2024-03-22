@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import InputField from "./components/InputFeild"; // Fixed typo in component import
+import InputField from "./components/InputField"; // Fixed typo in component import
 import { Todo } from "./model";
+import TodoList from "./components/TodoList";
 
 /**
  * App component represents the main application.
@@ -43,11 +44,7 @@ const App: React.FC = () => {
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
       {/* Display the list of todos */}
-      <ul>
-        {todos.map((t) => (
-          <li key={t.id}>{t.todo}</li>
-        ))}
-      </ul>
+      <TodoList todos={todos}  setTodos={setTodo}/>
     </div>
   );
 };

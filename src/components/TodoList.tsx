@@ -1,17 +1,18 @@
-import React from 'react'
-import { Todo } from "../model";
-import "./styles.css"
+import React from "react";
+import { TodoListProps } from "../model";
+import "./styles.css";
 
-interface Props {
-  todos: string; // Current todo input value
-  setTodos: React.Dispatch<React.SetStateAction<string>>; // Function to update todo input value
-
-}
-
-const TodoList : React.FC<Props> = ( todos, setTodos, ) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
   return (
-    <div>TodoList</div>
-  )
-}
+    <div className="todos">
+      {todos && todos.map((t) => (
+        <li key={t.id}>
+          {t.todo}
+          {t.isDone}
+        </li>
+      ))}
+    </div>
+  );
+};
 
-export default TodoList
+export default TodoList;
