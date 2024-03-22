@@ -44,7 +44,7 @@ const App: React.FC = () => {
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
       {/* Display the list of todos */}
-      <TodoList todos={todos}  setTodos={setTodo}/>
+      <TodoList todos={todos}  setTodos={setTodos}/>
     </div>
   );
 };

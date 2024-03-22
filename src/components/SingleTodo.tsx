@@ -1,13 +1,19 @@
 import React from "react";
-import { SingleTodoProps, Todo } from "../model";
+import {Todo } from "../model";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 import "./styles.css";
 
-const SingleTodo: React.FC<SingleTodoProps> = ({ todo, todos, setTodos }) => {
+type Props = {
+    todo: Todo,
+    todos: Todo[],
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>; // Function to update todo input value
+}
+
+const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     
     const handleDone = (id: number) => {
-        console.log("Handle Done called with id:", id);
+      
         setTodos(
             todos.map((todo) =>
                 todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
@@ -15,10 +21,11 @@ const SingleTodo: React.FC<SingleTodoProps> = ({ todo, todos, setTodos }) => {
         );
     };
     
+    
   return (
     <div className="todos__single">
       {/* Apply strike-through style to the todo text if it is marked as done */}
-      {todo.isDone ? (
+      {!todo.isDone ? (
             <s className="todos__single--text">{todo.todo}</s>
           ) : (
             <span className="todos__single--text">{todo.todo}</span>
