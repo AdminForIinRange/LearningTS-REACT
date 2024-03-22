@@ -25,7 +25,7 @@ export interface InputFieldProps {
   export interface SingleTodoProps {
     todo: Todo; // Current todo input value
     todos: Todo[];
-    setTodo: React.Dispatch<React.SetStateAction<string>>; // Function to update todo input value
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>; // Function to update todo input value
    
   }
   
