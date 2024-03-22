@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./styles.css";
 
 // Interface for props passed to the InputField component
@@ -13,10 +13,19 @@ interface Props {
  * It receives todo value, function to update todo value, and function to handle todo addition as props.
  */
 const InputField: React.FC<Props> = ({ todo, setTodo, handleAdd }) => {
+  const inputRef = useRef<HTMLInputElement>(null)
   return (
-    <form className="input" onSubmit={(e) => handleAdd(e)}>
+    <form className="input" onSubmit={(e) => {
+      handleAdd(e)
+      inputRef.current?.blur()
+
+    }
+
+    
+    }>
       {/* Input field for entering new todo */}
       <input
+      ref={inputRef}
         type="text"
         placeholder="Enter A Task"
         className="input__box"

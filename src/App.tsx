@@ -45,7 +45,7 @@ const App: React.FC = () => {
       {/* Display the list of todos */}
       <ul>
         {todos.map((t) => (
-          <div key={t.id}>{t.todo}</div>
+          <li key={t.id}>{t.todo}</li>
         ))}
       </ul>
     </div>
