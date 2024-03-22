@@ -20,8 +20,16 @@ const SingleTodo: React.FC<SingleTodoProps> = ({ todo, todos, setTodos }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+const handleEdit = (e: React.FormEvent, id:number ) =>{
+e.preventDefault()
+
+setTodos(todos.map((todo) =>( todo.id === id?{...todo,todo:editTodo} : todo
+)))
+setEdit(false)
+}
+
   return (
-    <form className="todos__single">
+    <form className="todos__single" onSubmit={(e) => handleEdit(e, todo.id)}>
        {edit ? (
             <input
             placeholder="Edit Here"
