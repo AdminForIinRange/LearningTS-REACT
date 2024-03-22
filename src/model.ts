@@ -1,3 +1,7 @@
+
+
+// import { SingleTodoProps } from "../model";
+
 export interface Todo {
     id: number,
     todo: string,
@@ -15,5 +19,13 @@ export interface InputFieldProps {
     todo: string; // Current todo input value
     setTodo: React.Dispatch<React.SetStateAction<string>>; // Function to update todo input value
     handleAdd: (e: React.FormEvent) => void; // Function to handle todo addition
+  }
+  
+
+  export interface SingleTodoProps {
+    todo: Todo; // Current todo input value
+    todos: Todo[];
+    setTodo: React.Dispatch<React.SetStateAction<string>>; // Function to update todo input value
+   
   }
   
