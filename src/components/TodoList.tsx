@@ -8,7 +8,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
     <div className="todos">
       {todos && todos.map((todo) => ( // I dislike this approach because it involves excessive prop passing and unnecessary abstraction.
 
-     <SingleTodo todo={todo} key={t.id} todos={todos} setTodos={setTodos}/>
+     <SingleTodo todo={todo} key={todo.id} todos={todos} setTodos={setTodos}/>
       ))}
     </div>
   );
