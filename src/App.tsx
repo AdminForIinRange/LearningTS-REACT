@@ -23,10 +23,11 @@ const App: React.FC = () => {
     e.preventDefault();
 
     // Check if the todo input is not empty
-    if (todo) { // On submit, it will first check if there's even a todo in the input field given to us by the onChange={setTodo}, then only will it run. This is self-evident when you have nothing in the field and you try to press go.
+    if (todo) {
+      // On submit, it will first check if there's even a todo in the input field given to us by the onChange={setTodo}, then only will it run. This is self-evident when you have nothing in the field and you try to press go.
       // Add the new todo to the todos list with a unique ID and mark it as not done
       setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
-      
+
       // Clear the todo input field after adding the todo
       setTodo("");
 
@@ -44,7 +45,7 @@ const App: React.FC = () => {
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
       {/* Display the list of todos */}
-      <TodoList todos={todos}  setTodos={setTodos}/>
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };

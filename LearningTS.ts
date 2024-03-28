@@ -1,4 +1,3 @@
-
 let string: string;
 let boolean: boolean;
 let stringOrNumber: string | number;
